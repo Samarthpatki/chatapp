@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    android:layout_width="match_parent"
+    android:elevation="10dp"
+    android:layout_height="wrap_content"
+    android:padding="5dp">
+
+    <!-- Profile Picture -->
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:civ_border_width="1dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/profiledummysvg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Chat Bubble -->
+    <TextView
+        android:id="@+id/message_text_received"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:background="@drawable/bg_received_message"
+        android:text="Hey there!"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:fontFamily="@font/soramedium"
+        android:layout_marginStart="4dp"
+        app:layout_constraintStart_toEndOf="@id/profile_image"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <!-- Timestamp -->
+    <TextView
+        android:id="@+id/timestamp_received"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10:31 PM"
+        android:layout_marginStart="2dp"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/message_text_received"
+        app:layout_constraintTop_toBottomOf="@id/message_text_received"
+        android:layout_marginTop="4dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.qualwebs_chatapp_assignment.viewmodel.SignInAndSignUpViewmodel" />
+
+    </data>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.SignInScreen">
+
+    <TextView
+        android:id="@+id/SignIntextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:fontFamily="@font/sorabold"
+        android:layout_marginStart="30dp"
+        android:text="@string/sign_in"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/credentialsTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/soraregular"
+        android:text="@string/enter_your_credentials"
+        android:textColor="@color/grey"
+        app:layout_constraintStart_toStartOf="@+id/SignIntextView"
+        app:layout_constraintTop_toBottomOf="@+id/SignIntextView" />
+
+    <EditText
+        android:id="@+id/email_edit_txt"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:textCursorDrawable="@null"
+        android:background="@drawable/edittext_bg"
+        android:hint="@string/enter_email_or_mobile_number"
+        android:paddingStart="10dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="50dp"
+        android:paddingBottom="10dp"
+        android:inputType="textEmailAddress"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/credentialsTxt"
+        app:layout_constraintTop_toBottomOf="@+id/credentialsTxt" />
+
+
+    <EditText
+        android:id="@+id/pass_edit_txt"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:textCursorDrawable="@null"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/edittext_bg"
+        android:hint="@string/enter_password"
+        android:paddingStart="10dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="50dp"
+        android:paddingBottom="10dp"
+        android:inputType="textPassword"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/email_edit_txt"
+        app:layout_constraintTop_toBottomOf="@+id/email_edit_txt" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:indeterminateTint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/forgot_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/soraregular"
+        android:text="@string/forgot_password"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/grey"
+        android:textSize="12sp"
+        android:padding="5dp"
+        android:visibility="gone"
+        android:onClick="@{viewmodel :: onForgotPasswordTxtClicked}"
+        app:layout_constraintEnd_toEndOf="@+id/pass_edit_txt"
+        app:layout_constraintTop_toBottomOf="@+id/pass_edit_txt" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/sign_in_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_btn"
+        android:text="@string/sign_in"
+        android:fontFamily="@font/sorasemibold"
+        app:layout_constraintTop_toBottomOf="@id/pass_edit_txt"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:layout_marginTop="80dp"
+        app:layout_constraintEnd_toEndOf="@+id/pass_edit_txt"
+        app:layout_constraintStart_toStartOf="@+id/pass_edit_txt" />
+
+    <TextView
+        android:id="@+id/staticTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/soraregular"
+        android:text="@string/don_t_have_and_account"
+        android:textColor="@color/grey"
+        android:layout_marginEnd="50dp"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/sign_in_btn"
+        app:layout_constraintStart_toStartOf="@+id/sign_in_btn"
+        app:layout_constraintTop_toBottomOf="@+id/sign_in_btn" />
+
+    <TextView
+        android:id="@+id/signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/soramedium"
+        android:paddingStart="5dp"
+        android:paddingEnd="10dp"
+        android:text="@string/signup"
+        android:textColor="@color/grey"
+        android:textSize="14sp"
+        android:onClick="@{viewmodel:: onSignUpTxtClicked}"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/staticTxt"
+        app:layout_constraintStart_toEndOf="@+id/staticTxt"
+        app:layout_constraintTop_toTopOf="@+id/staticTxt" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

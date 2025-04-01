@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "306988353313",
+    "project_id": "qualwebschatappassignment",
+    "storage_bucket": "qualwebschatappassignment.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:306988353313:android:a643fc43ae58f7f64e2060",
+        "android_client_info": {
+          "package_name": "com.example.qualwebs_chatapp_assignment"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDaNSluTeCTrLawYhUOE_QF5ECotwgMRTY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

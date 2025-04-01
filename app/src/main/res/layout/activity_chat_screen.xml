@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ChatScreen">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/chat_toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="75dp"
+    android:elevation="10dp"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    >
+
+    <ImageView
+        android:id="@+id/bckbtn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/back_arrow"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="5dp"
+        app:layout_constraintTop_toTopOf="parent" />
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/recv_profile_image"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:scaleType="centerCrop"
+        android:layout_marginStart="10dp"
+        app:civ_border_width="1dp"
+        android:src="@drawable/profiledummysvg"
+        android:padding="3dp"
+        app:layout_constraintStart_toEndOf="@id/bckbtn"
+        app:layout_constraintTop_toTopOf="@id/bckbtn"
+        app:layout_constraintBottom_toBottomOf="@id/bckbtn"
+        />
+    <TextView
+        android:id="@+id/receiverName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rahul Pandit"
+        android:layout_marginStart="10dp"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/recv_profile_image"
+        app:layout_constraintTop_toTopOf="@+id/recv_profile_image"
+        app:layout_constraintBottom_toBottomOf="@+id/recv_profile_image"
+        android:fontFamily="@font/sorabold"
+        android:textColor="@color/black"
+        />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="@color/grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_chat"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/chat_toolbar"
+        app:layout_constraintBottom_toTopOf="@id/message_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/message_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+
+        <EditText
+            android:id="@+id/edit_message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/edittext_bg"
+            android:hint="Type a message..."
+            android:maxLines="3"
+            android:minHeight="48dp"
+            android:padding="12dp"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_send"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/btn_send_image"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="Send Image"
+            android:padding="5dp"
+            app:layout_constraintEnd_toEndOf="@+id/edit_message"
+            android:src="@drawable/ic_cam"
+            app:layout_constraintBottom_toBottomOf="@+id/edit_message"
+            app:layout_constraintTop_toTopOf="@+id/edit_message"
+              />
+        <ImageView
+            android:id="@+id/btn_send"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_send"
+            android:background="@android:color/transparent"
+            android:contentDescription="Send"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:padding="5dp"
+            android:layout_marginEnd="8dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
